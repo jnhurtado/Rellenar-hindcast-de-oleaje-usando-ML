@@ -1,7 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-Spyder Editor
-
-This is a temporary script file.
+Código predictor de oleaje
 """
-print("hola mundo")
+
+import numpy as np
+import random
+import sys
+import IPython
+import tensorflow as tf
+from tensorflow import keras
+from keras.callbacks import ModelCheckpoint
+from keras.models import Model, load_model, Sequential
+from keras.layers import Dense, Activation, Dropout, Input, Masking, TimeDistributed, LSTM, Conv1D
+from keras.layers import GRU, Bidirectional, BatchNormalization, Reshape
+from keras.optimizers import Adam

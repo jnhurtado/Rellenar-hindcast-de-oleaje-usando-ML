@@ -5,16 +5,11 @@ Código predictor de oleaje
 
 
 import numpy as np
-import random
-import sys
-import IPython
+import matplotlib.pyplot as plt
 import tensorflow
 from tensorflow import keras
-from keras.callbacks import ModelCheckpoint
-from keras.models import Model, load_model, Sequential
-from keras.layers import Dense, Activation, Dropout, Input, Masking, TimeDistributed, LSTM, Conv1D
-from keras.layers import GRU, Bidirectional, BatchNormalization, Reshape
-from keras.optimizers import Adam
+import funciones as fun
+import os
 
-
+data=fun.read_NCEP_txt("NCEP_Spectra_from_Partitions_33.0S_72W_197901to200912_check.dfs0", resample = False, freq = '3H', npart = 11)
 

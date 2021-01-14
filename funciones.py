@@ -144,7 +144,7 @@ def download_era5(variables, years, area, outname, back_extension = False,
             fbat.write('python download0.py\n')
             fbat.write('call deactivate')
 
-        p = Popen('bat_download.bat', cwd = '.', shell = True)
+        p = open('bat_download.bat', cwd = '.', shell = True)
         stdout, stderr = p.communicate()
         os.remove('bat_download.bat')
         os.remove('download0.py')
@@ -203,7 +203,7 @@ def download_era5(variables, years, area, outname, back_extension = False,
         with open('bat_download.bat', 'a') as fbat:
             fbat.write('call deactivate')
 
-        p = Popen('bat_download.bat', cwd = '.', shell = True)
+        p = open('bat_download.bat', cwd = '.', shell = True)
         stdout, stderr = p.communicate()    
 
         for i in range(n_downloads):

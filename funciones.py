@@ -1,8 +1,12 @@
 import pandas as pd
 import matplotlib.cm as cm
 import matplotlib.pyplot as plt
-import numpy as np
 import os
+import shutil
+from subprocess import Popen
+import numpy as np
+
+
 
 def read_NCEP_txt(txts, resample = False, freq = '3H', npart = 11):
     '''Reads NCEP ascii partitioned files created with "run_extract_NCEP" function. This function reads partitioned data that has been already extracted.
@@ -144,7 +148,7 @@ def download_era5(variables, years, area, outname, back_extension = False,
             fbat.write('python download0.py\n')
             fbat.write('call deactivate')
 
-        p = open('bat_download.bat', cwd = '.', shell = True)
+        p = Popen('bat_download.bat', cwd = '.', shell = True)
         stdout, stderr = p.communicate()
         os.remove('bat_download.bat')
         os.remove('download0.py')
@@ -203,7 +207,7 @@ def download_era5(variables, years, area, outname, back_extension = False,
         with open('bat_download.bat', 'a') as fbat:
             fbat.write('call deactivate')
 
-        p = open('bat_download.bat', cwd = '.', shell = True)
+        p = Popen('bat_download.bat', cwd = '.', shell = True)
         stdout, stderr = p.communicate()    
 
         for i in range(n_downloads):

@@ -1,11 +1,12 @@
 import pandas as pd
-import matplotlib.cm as cm
 import matplotlib.pyplot as plt
 import os
 import shutil
 from subprocess import Popen
 import numpy as np
-
+from matplotlib.offsetbox import AnchoredText
+import matplotlib as mpl
+from mikeio import Dfs2
 
 
 def read_NCEP_txt(txts, resample = False, freq = '3H', npart = 11):
@@ -34,7 +35,7 @@ def read_NCEP_txt(txts, resample = False, freq = '3H', npart = 11):
     date_format = '%Y%m%d %H%M%S'
     parser      = lambda x: pd.datetime.strptime(x, date_format)
     
-    #print('Reading NCEP files...')
+    print('Reading NCEP files...')
     for txt in txts:
         if 'df' not in locals():
             df = pd.read_csv(txt, skiprows=1, header = None, names=cols, delim_whitespace=True, 

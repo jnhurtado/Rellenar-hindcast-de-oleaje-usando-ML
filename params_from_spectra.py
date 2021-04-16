@@ -1,4 +1,5 @@
-
+import numpy as np
+import pandas as pd
 
 def params_from_spectra(datain, item = None, units = None):
     ''' Compute hm0 & tp from spectra
@@ -43,7 +44,7 @@ def params_from_spectra(datain, item = None, units = None):
         else:
             dfreq = dfi.columns[1]/dfi.columns[0]
         
-        ## only constant direction spacing
+        ## only constant direction sp
         dtheta = np.abs(dfi.index[1] - dfi.index[0])
 
         if units == 'rad':     

@@ -2,6 +2,8 @@
 
 ## Código del trabajo de título de Javier Hurtado, con apoyo del equipo PRDW conformado por Benjamín Carrión y Tomás Cuevas.
 
+### En la carpeta "Informe trabajo de título" se adjunta la memoria de los resultados y concluciones obtenidas a partir del trabajo.
+
 1. funciones.py: Contiene funciones creadas por Tomás Cuevas.
     -  Para descargar datos de viento de ECMWF https://cds.climate.copernicus.eu/cdsapp#!/dataset/reanalysis-era5-single-levels?tab=overview.
     -  Visualizar espectro direccional de energía de oleaje de manera polar.
